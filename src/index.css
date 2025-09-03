@@ -9,52 +9,52 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 213 27% 22%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 213 27% 22%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 27% 22%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 199 95% 50%;
+    --primary: 0 0% 9%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 27% 97%;
-    --secondary-foreground: 213 27% 22%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 213 27% 96%;
-    --muted-foreground: 213 15% 55%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 173 58% 39%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 27% 90%;
-    --input: 213 27% 90%;
-    --ring: 199 95% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 9%;
 
-    /* Educational theme colors */
-    --success: 142 76% 36%;
+    /* Simple theme colors */
+    --success: 120 61% 50%;
     --success-foreground: 0 0% 100%;
     
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     
-    --info: 217 91% 60%;
+    --info: 221 83% 53%;
     --info-foreground: 0 0% 100%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(199 95% 50%), hsl(173 58% 39%));
-    --gradient-secondary: linear-gradient(135deg, hsl(213 27% 97%), hsl(199 95% 95%));
-    --gradient-hero: linear-gradient(135deg, hsl(199 95% 50%), hsl(173 58% 39%), hsl(142 76% 36%));
+    /* Simple backgrounds */
+    --gradient-primary: hsl(0 0% 9%);
+    --gradient-secondary: hsl(0 0% 98%);
+    --gradient-hero: hsl(0 0% 98%);
     
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-glow: 0 0 20px hsla(199, 95%, 50%, 0.3);
+    /* Minimal shadows */
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-glow: none;
 
     --radius: 0.5rem;
 

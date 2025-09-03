@@ -37,120 +37,83 @@ export const StudentDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-secondary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Student Dashboard</h1>
-          <p className="text-muted-foreground">View your exam results and academic performance</p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">Student Dashboard</h1>
+          <p className="text-muted-foreground">View your exam results</p>
         </div>
 
-        {/* Student Info Card */}
-        <Card className="shadow-card mb-8">
-          <CardHeader>
+        <Card className="mb-6">
+          <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-xl">{studentData.name}</CardTitle>
-                <CardDescription>
-                  {studentData.studentId} • {studentData.class}
-                </CardDescription>
+                <h2 className="text-xl font-semibold">{studentData.name}</h2>
+                <p className="text-muted-foreground">{studentData.studentId} • {studentData.class}</p>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-primary">
-                  {studentData.overallAverage}%
-                </div>
+                <div className="text-3xl font-bold">{studentData.overallAverage}%</div>
                 <p className="text-sm text-muted-foreground">Overall Average</p>
               </div>
             </div>
-          </CardHeader>
+          </CardContent>
         </Card>
 
-        {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <Card className="shadow-card">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Total Exams</CardTitle>
-              <BookOpen className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">5</div>
-              <p className="text-xs text-muted-foreground">This semester</p>
+        <div className="grid grid-cols-4 gap-4 mb-6">
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-xl font-bold">5</div>
+              <p className="text-sm text-muted-foreground">Exams</p>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Best Score</CardTitle>
-              <Award className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-success">90%</div>
-              <p className="text-xs text-muted-foreground">Biology exam</p>
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-xl font-bold text-success">90%</div>
+              <p className="text-sm text-muted-foreground">Best</p>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Improvement</CardTitle>
-              <TrendingUp className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-success">+5.2%</div>
-              <p className="text-xs text-muted-foreground">From last month</p>
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-xl font-bold text-success">+5.2%</div>
+              <p className="text-sm text-muted-foreground">Growth</p>
             </CardContent>
           </Card>
 
-          <Card className="shadow-card">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Class Rank</CardTitle>
-              <BarChart3 className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">7th</div>
-              <p className="text-xs text-muted-foreground">Out of 45 students</p>
+          <Card>
+            <CardContent className="p-4 text-center">
+              <div className="text-xl font-bold">7th</div>
+              <p className="text-sm text-muted-foreground">Rank</p>
             </CardContent>
           </Card>
         </div>
 
-        {/* Subject-wise Scores */}
-        <Card className="shadow-card">
+        <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BarChart3 className="h-5 w-5 text-primary" />
-              Subject-wise Performance
-            </CardTitle>
-            <CardDescription>
-              Your latest exam scores across all subjects
-            </CardDescription>
+            <CardTitle>Subject Scores</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {subjectScores.map((subject, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <h3 className="font-medium">{subject.subject}</h3>
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium">{subject.subject}</span>
                       <Badge variant="outline" className="text-xs">
                         {getGrade(subject.score)}
                       </Badge>
-                      <TrendingUp 
-                        className={`h-4 w-4 ${subject.trend === 'up' ? 'text-success' : 'text-destructive'} ${subject.trend === 'down' ? 'rotate-180' : ''}`} 
-                      />
                     </div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm text-muted-foreground flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-muted-foreground">
                         {new Date(subject.examDate).toLocaleDateString()}
                       </span>
-                      <span className={`text-lg font-bold ${getScoreColor(subject.score)}`}>
-                        {subject.score}/{subject.maxScore}
+                      <span className="font-semibold">
+                        {subject.score}%
                       </span>
                     </div>
                   </div>
                   <Progress value={subject.score} className="h-2" />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Performance: {subject.score >= 85 ? 'Excellent' : subject.score >= 75 ? 'Good' : subject.score >= 65 ? 'Average' : 'Needs Improvement'}</span>
-                    <span>{subject.score}%</span>
-                  </div>
                 </div>
               ))}
             </div>
